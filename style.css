@@ -60,6 +60,7 @@ body {
     padding: 0.3rem;
     border-radius: 0.3rem;
     margin-right: 6px;
+    cursor: pointer;
 }
 
 
@@ -114,6 +115,7 @@ body {
 
 .btn-submit:hover {
     transform: scale(1.1);
+    background: #141414;
 }
 
 /* output */

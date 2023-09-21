@@ -18,6 +18,9 @@ The Age Calculator App is a simple web application that allows users to input th
 - CSS
 - JavaScript
 
+## UI
+Frontend mentor challenge [age-calculator-app](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q)
+
 ## Installation
 
 1. Clone the repository to your local machine using the following command:
