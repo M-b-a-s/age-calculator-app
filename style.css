@@ -136,3 +136,47 @@ body {
     font-style: italic;
     font-size: 3.3rem;
 }
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 260px;
+        padding: 22px;
+    }
+
+    .form-group {
+        justify-content: center;
+    }
+
+    .form-group .input-field {
+        width: 3.5rem;
+    }
+
+    .result .age-result {
+        font-size: 2rem;
+    }
+    
+    .result h1 {
+        font-size: 2rem;
+    }
+
+    .submit {
+        position: relative;
+        margin: 3rem 0;
+    }
+
+    .btn-submit {
+        position: absolute;
+        left: 43%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+
+    .line {
+        width: 100%;
+    }
+    
+    .error {
+        bottom: -20px;
+    }
+}
