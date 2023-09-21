@@ -72,18 +72,35 @@ form.addEventListener('submit', (e) => {
 
 
 // calculate age in years, months and days
-const calculateAge = (years, months, days) => {
-    years = parseInt(currentYear - year);
-    months = parseInt(years * 12);
+function calculateAge(dob) {
+  const birthDate = new Date(dob);
 
-    // number of days
-    let averageNumDays = 30.44;
-    days = Math.round(months * averageNumDays);
+  // Calculate the difference in years
+  let ageYears = date.getFullYear() - birthDate.getFullYear();
 
-    !(year > 2023) ? document.getElementById('years').textContent = years : null;
+  // Calculate the difference in months
+  let ageMonths = date.getMonth() - birthDate.getMonth();
+  if (ageMonths < 0) {
+    ageYears--;
+    ageMonths += 12;
+  }
 
-    !(year > 2023) ? document.getElementById('months').textContent = months :null;
+  // Calculate the difference in days
+  let ageDays = date.getDate() - birthDate.getDate();
+  if (ageDays < 0) {
+    const lastDayOfMonth = new Date(date.getFullYear(), today.getMonth(), 0).getDate();
+    ageMonths--;
+    ageDays += lastDayOfMonth;
+  }
 
-    !(year > 2023) ? document.getElementById('days').textContent = days : null;
-
+  return {
+    years: ageYears,
+    months: ageMonths,
+    days: ageDays,
+  };
 }
+
+const dob = '${year}-${month}-${day}'; // Replace with the date of birth in yyyy-mm-dd format
+const age = calculateAge(dob);
+
+console.log(`Age: ${age.years} years, ${age.months} months, ${age.days} days`);
