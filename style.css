@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background-color: #F0F0F0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+}
+
+.container {
+    background: #FFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 10px 10px 100px;
+    width: 450px;
+    /* max-width: 600px; */
+}
+
+/* input */
+
+.form-input {
+    display: flex;
+    color: #8B8B8B;
+    padding-right: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-evenly;
+    color: #8B8B8B;
+    padding-right: 10px;
+    /* border: 1px solid black; */
+    position: relative;
+}
+
+.form-group label {
+    font-size: 0.6rem;
+    font-weight: bold;
+    padding-bottom: 0.3rem;
+}
+
+.form-group .input-field {
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 0.875rem;
+    border: 1px solid #b8b6b6;
+    width: 5rem;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    margin-right: 6px;
+}
+
+
+/* error messages */
+.error {
+    position: absolute;
+    bottom: -12px;
+    color: red;
+    padding-top: 5px;
+    font-size: 7px;
+    font-style: italic;
+    /* display: none; */
+}
+
+.red {
+    color: red;
+    border-color: red;
+}
+
+#day-error {
+    display: none;
+}
+#month-error {
+    display: none;
+}
+#year-error {
+    display: none;
+}
+
+/* submit */
+.submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.line {
+    height: 1px;
+    width: 90%;
+    background: #b8b6b6;
+}
+
+.btn-submit {
+    background: #9452a8;
+    border-radius: 50%;
+    color: #F0F0F0;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    transform: scale(1.1);
+}
+
+/* output */
+.result {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.result .age-result {
+    font-size: 3.3rem;
+    font-weight: bold;
+    color: #9452a8;
+    font-style: italic;
+}
+
+.result h1 {
+    font-style: italic;
+    font-size: 3.3rem;
+}

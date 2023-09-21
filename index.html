@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Input -->
+      <form>
+        <div class="form-input">
+          <div class="form-group">
+            <label for="day">DAY</label>
+            <input
+              type="text"
+              class="input-field"
+              id="day"
+              name="day"
+              placeholder="DD"
+              required
+              maxlength="2"
+            />
+            <span id="day-error" class="error">Must be a valid day</span>
+          </div>
+
+          <div class="form-group">
+            <label for="month">MONTH</label>
+            <input
+              type="name"
+              class="input-field"
+              id="month"
+              name="month"
+              placeholder="MM"
+              required
+              maxlength="2"
+            />
+            <span id="month-error" class="error">Must be a valid month</span>
+          </div>
+
+          <div class="form-group">
+            <label for="year">YEAR</label>
+            <input
+              type="name"
+              class="input-field"
+              id="year"
+              name="year"
+              placeholder="YYYY"
+              required
+              maxlength="4"
+            />
+            <span id="year-error" class="error">Must be in the past</span>
+          </div>
+        </div>
+        <!-- Submit -->
+        <div class="submit" type="submit">
+          <div class="line"></div>
+          <button class="btn-submit" id="submit">
+            <i class="fa-solid fa-arrow-down"></i>
+          </button>
+        </div>
+      </form>
+
+      <!-- Output -->
+      <div class="age-display">
+        <div class="result">
+          <span class="age-result" id="years">--</span>
+          <h1>years</h1>
+        </div>
+        <div class="result">
+          <span class="age-result" id="months">--</span>
+          <h1>months</h1>
+        </div>
+        <div class="result">
+          <span class="age-result" id="days">--</span>
+          <h1>days</h1>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
