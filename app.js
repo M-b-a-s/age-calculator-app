@@ -66,9 +66,6 @@ form.addEventListener("submit", (e) => {
 
   // check year validity
   if (year > currentYear || (month < 1 || month > 12) || (day < 1 || day > validDate)) {
-    yearOutput.textContent = '--'
-    monthOutput.textContent = '--';
-    dayOutput.textContent = '--';
     return 0;
   } else {
     calculateAge(dob)
@@ -76,7 +73,6 @@ form.addEventListener("submit", (e) => {
 
   // calculateAge(dob);
   console.log(calculateAge(dob))
-  
 
 });
 
@@ -115,10 +111,10 @@ const calculateAge = (dob) => {
     }
   }
 
+  // show result
   yearOutput.textContent = ageYears;
   monthOutput.textContent = ageMonths;
   dayOutput.textContent = ageDays;
 
 };
 
-const updateResult = () => {}
