@@ -23,13 +23,16 @@ let year;
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // Get input values
+  // Get input values(local)
   day = parseInt(dayInput.value);
   month = parseInt(monthInput.value);
   year = parseInt(yearInput.value);
 
+  // Check if date is invalid
+  const validDate = new Date(year, month, 0).getDate();
+
   // Validate day, month, and year
-  if (day < 1 || day > 31) {
+  if (day < 1 || day > validDate) {
     dayErr.style.display = "block";
     dayInput.style.borderColor = "red";
     document.querySelector("[for='day']").style.color = "red";
@@ -59,12 +62,22 @@ form.addEventListener("submit", (e) => {
     document.querySelector("[for='year']").style.color = "";
   }
 
-  const dob = year + "-" + month + "-" + day; // Replace with the date of birth in yyyy-mm-dd format
+  const dob = year + "-" + month + "-" + day;
 
-  calculateAge(dob);
+  // check year validity
+  if (year > currentYear || (month < 1 || month > 12) || (day < 1 || day > validDate)) {
+    yearOutput.textContent = '--'
+    monthOutput.textContent = '--';
+    dayOutput.textContent = '--';
+    return 0;
+  } else {
+    calculateAge(dob)
+  }
 
+  // calculateAge(dob);
   console.log(calculateAge(dob))
-  console.log(dob)
+  
+
 });
 
 
@@ -78,8 +91,12 @@ const calculateAge = (dob) => {
   // Calculate the difference in months
   let ageMonths = date.getMonth() - birthDate.getMonth();
   if (ageMonths <= 0) {
-    ageYears--;
-    ageMonths += 12;
+    if (ageYears == 0) {
+      ageYears = 0;
+    } else {
+      ageYears--;
+      ageMonths += 12;
+    }
   }
 
   // Calculate the difference in days
@@ -90,17 +107,18 @@ const calculateAge = (dob) => {
       date.getMonth(),
       0
     ).getDate();
-    ageMonths--;
-    ageDays += lastDayOfMonth;
+    if (ageMonths == 0) {
+      ageMonths = 0;
+    } else {
+      ageMonths--;
+      ageDays += lastDayOfMonth;
+    }
   }
 
-  document.getElementById('years').textContent = ageYears;
-  document.getElementById('months').textContent = ageMonths;
-  document.getElementById('days').textContent = ageDays;
+  yearOutput.textContent = ageYears;
+  monthOutput.textContent = ageMonths;
+  dayOutput.textContent = ageDays;
 
-  return {
-    years: ageYears,
-    months: ageMonths,
-    days: ageDays,
-  };
 };
+
+const updateResult = () => {}
